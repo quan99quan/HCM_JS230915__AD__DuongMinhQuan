@@ -4,59 +4,15 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
+  url      = "mysql://root:@127.0.0.1:3306/quan"
 }
-
-enum MemberRole {
-  master
-  admin
-  member
+model task{
+ id Int @id @default(autoincrement())
+ name String  @unique @db.VarChar(50)
 }
-
-model member {
-  id              Int        @id @default(autoincrement())
-  loginId         String     @unique @db.VarChar(15)
-  password        String     @db.Char(200)
-  role            MemberRole @default(member)
-  firstLoginState Boolean    @default(true)
-  createTime      String
-  updateTime      String
-  permission      String     @default("[]")
-  firstName       String?
-  lastName        String?
-  phoneNumber     String
-  phoneConfirm Boolean @default(false)
-  email           String     @unique
-  emailConfirm Boolean @default(false)
-  ipList          String @default("[]")
-  avatar          String
-  logs            log[]
-  block        Boolean @default(false)
-}
-
-model log {
-  id         Int    @id @default(autoincrement())
-  memberId   Int
-  member     member @relation(fields: [memberId], references: [id])
-  note       String @db.LongText
-  createTime String
-}
-
-enum AvailableStatus {
-  active
-  inactive
-}
-
-
-
-
-
-model user {
-  id         Int    @id @default(autoincrement())
-  userName String
-  password String
-  wallet Float @default(0)
-
-  createAt String
-  updateAt String
+model user{
+  id Int @id @default(autoincrement())
+  username String @db.VarChar(50)
+  password  String @db.VarChar(255)
+  role Boolean @default(false)
 }

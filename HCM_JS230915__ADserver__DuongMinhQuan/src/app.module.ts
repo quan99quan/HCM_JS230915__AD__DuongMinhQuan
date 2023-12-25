@@ -7,7 +7,6 @@ import { ConfigModule } from '@nestjs/config';
 import { MailModule } from './modules/mail/mail.module';
 import { LoginModule } from './modules/login/login.module';
 import { SmsModule } from './modules/sms/sms.module';
-
 @Module({
   imports: [
     ConfigModule.forRoot(),

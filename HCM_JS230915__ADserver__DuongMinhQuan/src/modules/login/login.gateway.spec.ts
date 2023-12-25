@@ -1,11 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { LoginGateway } from './login.gateway';
 import { LoginService } from './login.service';
-
 describe('LoginGateway', () => {
   let gateway: LoginGateway;
-
-  beforeEach(async () => {
+beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [LoginGateway, LoginService],
     }).compile();
