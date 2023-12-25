@@ -1,0 +1,100 @@
+.member-box {
+  width: 100%;
+  height: 85vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(black, 0.5);
+  z-index: 1000;
+
+  .member-form-container {
+    width: 30%;
+    background-color: #fff;
+    padding: 20px;
+    border: #796DCD solid 1px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 5px #796DCD;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/000/631/128/non_2x/purple-grid-mosaic-background-creative-design-templates-vector.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    Form {
+      width: 100%;
+
+      h3 {
+        margin-bottom: 25px;
+        font-weight: 600;
+        font-size: 30px;
+
+      }
+      h6{
+        position: absolute;
+        font-size: 20px;
+        top:10px;
+        right:15px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      Button {
+        padding: 5px 8px;
+        border-radius: 5px;
+        border: #796DCD solid 1px;
+
+        &:hover {
+          color: #796DCD;
+          border: #796DCD solid 1px;
+        }
+      }
+    }
+  }
+}
+
+.Btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100px;
+  height: 40px;
+  border: none;
+  padding: 0px 20px;
+  background-color: rgb(168, 38, 255);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px rgb(140, 32, 212);
+  transition-duration: .3s;
+}
+
+.svg {
+  width: 13px;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  fill: white;
+  transition-duration: .3s;
+}
+
+.Btn:hover {
+  color: transparent;
+}
+
+.Btn:hover svg {
+  right: 43%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  transition-duration: .3s;
+}
+
+.Btn:active {
+  transform: translate(3px, 3px);
+  transition-duration: .3s;
+  box-shadow: 2px 2px 0px rgb(140, 32, 212);
+}
